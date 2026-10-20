@@ -1,0 +1,127 @@
+.footer {
+  background: var(--color-primary);
+  color: rgba(255, 255, 255, 0.85);
+  padding-top: 70px;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-surface);
+}
+
+.footer__brand p {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  max-width: 26ch;
+}
+
+.footer__newsletter {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.footer__newsletter input {
+  flex: 1;
+  min-width: 0;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  padding: 10px 16px;
+  color: var(--color-surface);
+  font-size: 0.85rem;
+}
+
+.footer__newsletter input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer__newsletter .btn-primary {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border-color: var(--color-surface);
+  padding-inline: 20px;
+}
+
+.footer__newsletter .btn-primary:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-surface);
+}
+
+.footer__col h4 {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-surface);
+  margin-bottom: 16px;
+}
+
+.footer__col p,
+.footer__col li {
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 24px;
+  font-size: 0.8rem;
+}
+
+.footer__social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social a {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.2s ease;
+}
+
+.footer__social a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--color-surface);
+}
+
+.footer__social svg {
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer__top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Design tokens — Blessings (Sai Sarar Marquee & Banquet Hall)
+   Palette + type scale copied from the reference "Eventro" layout.
+   ========================================================================== */
+
+:root {
+  /* --- colors --- */
+  --color-bg: #f6f2e7;           /* warm cream page background */
+  --color-bg-soft: #efe9d8;      /* slightly deeper cream, used for panels */
+  --color-surface: #ffffff;      /* navbar / cards */
+
+  --color-primary: #4f5d3a;      /* deep olive green — buttons, icons */
+  --color-primary-dark: #3c4830; /* hover state for primary */
+  --color-primary-soft: #e7ebdd; /* pale olive tint, backgrounds behind icons */
+
+  --color-accent: #c99a4b;       /* warm gold — highlighted headline words */
+
+  --color-text: #2b2a25;         /* main body copy */
+  --color-text-muted: #6f6d63;   /* secondary copy */
+  --color-border: #e3ddc9;
+
+  /* --- type --- */
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-body: "Poppins", "Segoe UI", sans-serif;
+
+  --fs-h1: clamp(2.1rem, 4.2vw, 3.4rem);
+  --fs-h2: clamp(1.6rem, 2.6vw, 2.2rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* --- layout --- */
+  --container-max: 1240px;
+  --radius-pill: 999px;
+  --radius-lg: 24px;
+  --radius-md: 14px;
+
+  --nav-height: 84px;
+
+  --shadow-soft: 0 10px 30px rgba(43, 42, 37, 0.08);
+  --shadow-card: 0 14px 34px rgba(43, 42, 37, 0.12);
+
+  --transition-base: 220ms ease;
+}

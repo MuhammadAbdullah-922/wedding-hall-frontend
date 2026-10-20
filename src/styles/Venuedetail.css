@@ -1,0 +1,227 @@
+/* ══════════════════════════════
+   Venue Detail — dynamic hero
+   ══════════════════════════════ */
+.venue-hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-block: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.venue-hero__inner {
+  text-align: center;
+  max-width: 640px;
+}
+
+.venue-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.venue-hero__divider {
+  display: block;
+  width: 90px;
+  height: 1px;
+  background: var(--color-primary, #5b6b3f);
+  margin: 0 auto 14px;
+  position: relative;
+}
+
+.venue-hero__divider::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary, #5b6b3f);
+}
+
+.venue-hero__subtitle {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ══════════════════════════════
+   Content layout
+   ══════════════════════════════ */
+.venue-detail__layout {
+  row-gap: 32px;
+}
+
+.venue-detail__desc {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+}
+
+.venue-detail__subhead {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin: 28px 0 14px;
+}
+
+.venue-detail__amenities,
+.venue-detail__facilities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+}
+
+.venue-detail__amenities li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.venue-detail__amenities li i {
+  color: var(--color-primary);
+  font-size: 1.05rem;
+}
+
+.venue-detail__facilities li {
+  font-size: 0.92rem;
+  color: rgba(0, 0, 0, 0.75);
+  padding-left: 18px;
+  position: relative;
+}
+
+.venue-detail__facilities li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent, #c79a4b);
+  border-radius: 50%;
+}
+
+/* ══════════════════════════════
+   Facts sidebar card
+   ══════════════════════════════ */
+.venue-detail__facts {
+  background: var(--color-surface-alt, #f4f1ea);
+  border-radius: var(--radius-lg, 12px);
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.venue-detail__fact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.venue-detail__fact--wide {
+  grid-column: 1 / -1;
+}
+
+.venue-detail__fact i {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+}
+
+.venue-detail__fact div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.venue-detail__fact strong {
+  font-size: 1.1rem;
+  font-family: var(--font-display);
+}
+
+.venue-detail__fact span {
+  font-size: 0.82rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.venue-detail__book {
+  width: 100%;
+  text-align: center;
+}
+
+/* ══════════════════════════════
+   Gallery
+   ══════════════════════════════ */
+.venue-detail__gallery {
+  margin-top: 50px;
+}
+
+.venue-detail__gallery-grid {
+  column-count: 3;
+  column-gap: 16px;
+}
+
+.venue-detail__gallery-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: var(--radius-md, 10px);
+  overflow: hidden;
+}
+
+.venue-detail__gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.venue-detail__gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.venue-detail__back {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.venue-detail__state {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.venue-detail__state--error {
+  color: #b3261e;
+}
+
+@media (max-width: 767px) {
+  .venue-detail__gallery-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 575px) {
+  .venue-detail__amenities,
+  .venue-detail__facilities {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-detail__facts {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-detail__gallery-grid {
+    column-count: 1;
+  }
+}

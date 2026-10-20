@@ -1,0 +1,33 @@
+.brands {
+  padding-block: 46px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brands__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.brands__logo {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+  transition: opacity var(--transition-base), color var(--transition-base);
+}
+
+.brands__logo:hover {
+  opacity: 1;
+  color: var(--color-primary);
+}
+
+@media (max-width: 767px) {
+  .brands__row {
+    justify-content: center;
+    text-align: center;
+  }
+}

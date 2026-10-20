@@ -1,0 +1,135 @@
+.stats {
+  padding-block: 56px;
+}
+
+/* Flexible layout — works correctly whether there are 3, 4, 5 or more stats
+   (fixed 4-column grid would break/misalign with a different count). */
+.stats__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+  row-gap: 30px;
+}
+
+.stats__item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 160px;
+  max-width: 240px;
+  padding: 16px 12px;
+  border-right: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+}
+
+/* Remove the divider after the last item in the row (desktop, single row) */
+.stats__item:last-child {
+  border-right: none;
+}
+
+/* Hover state — black background, white text */
+.stats__item:hover {
+  background-color: #000;
+}
+
+.stats__item:hover .stats__number,
+.stats__item:hover .stats__label {
+  color: #fff;
+}
+
+.stats__number {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  transition: color 0.25s ease;
+}
+
+.stats__label {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  transition: color 0.25s ease;
+}
+
+/* ══════════════════════════════
+   Loading skeleton state
+   ══════════════════════════════ */
+.stats__skeleton-bar {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  color: transparent !important;
+  animation: stats-pulse 1.2s ease-in-out infinite;
+}
+
+.stats__item--skeleton .stats__number.stats__skeleton-bar {
+  width: 70px;
+  height: 1.6em;
+  margin-bottom: 6px;
+  align-self: center;
+}
+
+.stats__item--skeleton .stats__label.stats__skeleton-bar--sm {
+  width: 110px;
+  height: 0.9em;
+  align-self: center;
+}
+
+@keyframes stats-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ══════════════════════════════
+   Responsive breakpoints
+   ══════════════════════════════ */
+
+/* Tablets — 2 columns, remove divider on the right-hand column
+   (nth-child(2n) works correctly regardless of total item count) */
+@media (max-width: 767px) {
+  .stats__grid {
+    row-gap: 30px;
+  }
+
+  .stats__item {
+    flex: 1 1 45%;
+    max-width: none;
+  }
+
+  .stats__item:nth-child(2n) {
+    border-right: none;
+  }
+}
+
+/* Small phones — keep 2 columns instead of stacking full-width,
+   so it doesn't look like a plain vertical list */
+@media (max-width: 480px) {
+  .stats__grid {
+    row-gap: 24px;
+    column-gap: 8px;
+  }
+
+  .stats__item {
+    flex: 1 1 45%;
+    max-width: none;
+    border-right: none !important;
+    padding-inline: 8px;
+  }
+
+  .stats__number {
+    font-size: 1.7rem;
+  }
+
+  .stats__label {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,113 @@
+/* ══════════════════════════════
+   Menu Page — Hero
+   ══════════════════════════════ */
+.menu-hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-block: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-hero__inner {
+  text-align: center;
+  max-width: 640px;
+}
+
+.menu-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.menu-hero__divider {
+  display: block;
+  width: 90px;
+  height: 1px;
+  background: var(--color-primary, #5b6b3f);
+  margin: 0 auto 22px;
+  position: relative;
+}
+
+.menu-hero__divider::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary, #5b6b3f);
+}
+
+.menu-hero__subtitle {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════
+   Bottom CTA band
+   ══════════════════════════════ */
+.menu-cta {
+  background: var(--color-surface-alt, #ece7dd);
+  padding-block: 46px;
+}
+
+.menu-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.menu-cta__title {
+  font-family: var(--font-display);
+  color: var(--color-primary, #5b6b3f);
+  font-size: 1.7rem;
+  margin-bottom: 6px;
+}
+
+.menu-cta__sub {
+  color: var(--color-text-muted);
+}
+
+.menu-cta__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .menu-cta__inner {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ══════════════════════════════
+   Responsive — hero
+   ══════════════════════════════ */
+@media (max-width: 767px) {
+  .menu-hero {
+    padding-block: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-hero {
+    padding-block: 60px;
+  }
+
+  .menu-hero__subtitle {
+    font-size: 0.94rem;
+  }
+
+  .menu-cta__title {
+    font-size: 1.4rem;
+  }
+}
